@@ -1,16 +1,30 @@
 "use client";
 
+import { motion as m } from "framer-motion";
 import { Typography } from "@material-tailwind/react";
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-row justify-center">
+    <div className="w-full flex flex-col justify-center items-center min-h-screen">
       <Typography
         variant="h1"
-        className="text-2xl relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-zinc-900 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-pink-700"
+        className="text-2xl relative w-[max-content] font-mono before:absolute before:inset-0 before:animate-typewriter before:bg-zinc-900 after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-neutral-300"
       >
-        Portfolio by Philip Schrenk
+        Portfolio by <span className="text-pink-700">Philip Schrenk</span>
       </Typography>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{ delay: 3, duration: 2, ease: "easeInOut" }}
+      >
+        <Typography variant="lead" className="max-w-screen-md mt-3 text-center">
+          Hi there! This is my portfolio website. Here, you'll find an overview
+          of my work, projects, and experiences, along with ways to connect with
+          me. Feel free to explore and get in touch!
+        </Typography>
+      </m.div>
     </div>
   );
 }
