@@ -1,6 +1,6 @@
 "use client";
 
-import {motion as m} from "framer-motion";
+import { motion as m } from "framer-motion";
 import React from "react";
 import {
   Navbar,
@@ -124,7 +124,11 @@ const NavListMenu: React.FC = () => {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium hover:!text-pink-700">
+          <Typography
+            as="div"
+            variant="small"
+            className="font-medium hover:!text-pink-700"
+          >
             <ListItem
               className="flex items-center gap-2 py-2 pr-4 font-medium text-neutral-300"
               selected={isMenuOpen || isMobileMenuOpen}
@@ -153,7 +157,11 @@ const NavListMenu: React.FC = () => {
         </MenuList>
       </Menu>
       <div className="block lg:hidden">
-        {isMobileMenuOpen && <Collapse open={isMobileMenuOpen} className="rounded">{renderItems}</Collapse>}
+        {isMobileMenuOpen && (
+          <Collapse open={isMobileMenuOpen} className="rounded">
+            {renderItems}
+          </Collapse>
+        )}
       </div>
     </React.Fragment>
   );
@@ -162,11 +170,21 @@ const NavListMenu: React.FC = () => {
 const NavList: React.FC = () => {
   return (
     <List className="flex-col mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:items-center lg:p-1">
-      <Typography as="a" href="#" variant="small" className="font-medium hover:text-pink-600">
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        className="font-medium hover:text-pink-600"
+      >
         <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
       </Typography>
       <NavListMenu />
-      <Typography as="a" href="#" variant="small" className="font-medium hover:text-pink-600">
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        className="font-medium hover:text-pink-600"
+      >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           Contact Us
         </ListItem>
@@ -186,13 +204,13 @@ const NavbarWithMegaMenu: React.FC = () => {
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
-      <div className="flex items-center justify-between">
+    <Navbar className="w-full px-4 py-2 !shadow-none border-b border-zinc-800 !rounded-none">
+      <div className="flex items-center justify-between mx-auto max-w-screen-xl">
         <Typography
           as="a"
           href="#"
           variant="h6"
-          className="mr-4 font-semibold cursor-pointer py-1.5 lg:ml-2 transition-all ease-in-out duration-200 hover:!text-xl hover:text-pink-600"
+          className="mr-4 font-semibold cursor-pointer py-1.5 lg:ml-2 transition-all ease-in-out duration-75 hover:!text-xl hover:text-pink-600 hover:uppercase"
         >
           Proxreal
         </Typography>
@@ -200,10 +218,18 @@ const NavbarWithMegaMenu: React.FC = () => {
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex">
-          <Button variant="text" size="sm" className="hover:bg-pink-600 bg-neutral-800">
+          <Button
+            variant="text"
+            size="sm"
+            className="hover:bg-pink-600 bg-neutral-800"
+          >
             Log In
           </Button>
-          <Button variant="gradient" size="sm" className="hover:bg-pink-600 bg-neutral-800">
+          <Button
+            variant="gradient"
+            size="sm"
+            className="hover:bg-pink-600 bg-neutral-800"
+          >
             Sign In
           </Button>
         </div>
@@ -224,10 +250,20 @@ const NavbarWithMegaMenu: React.FC = () => {
         <Collapse open={openNav}>
           <NavList />
           <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-            <Button variant="outlined" size="sm" fullWidth className="hover:bg-pink-600 bg-neutral-800">
+            <Button
+              variant="outlined"
+              size="sm"
+              fullWidth
+              className="hover:bg-pink-600 bg-neutral-800"
+            >
               Log In
             </Button>
-            <Button variant="gradient" size="sm" fullWidth className="hover:bg-pink-600 bg-neutral-800">
+            <Button
+              variant="gradient"
+              size="sm"
+              fullWidth
+              className="hover:bg-pink-600 bg-neutral-800"
+            >
               Sign In
             </Button>
           </div>
