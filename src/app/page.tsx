@@ -19,10 +19,8 @@ export default function Home() {
         }}
         transition={{ delay: 3, duration: 2, ease: "easeInOut" }}
       >
-        <Typography variant="lead" className="max-w-screen-md mt-3 text-center">
-          Hi there! This is my portfolio website. Here, you'll find an overview
-          of my work, projects, and experiences, along with ways to connect with
-          me. Feel free to explore and get in touch!
+        <Typography variant="lead" className="max-w-screen-md mt-3 text-center text-neutral-300">
+          This portfolio website contains information about my projects, linked accounts and contact information.
         </Typography>
       </m.div>
     </div>

@@ -31,52 +31,62 @@ import {
   TagIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const navListMenuItems = [
   {
     title: "Products",
     description: "Find the perfect solution for your needs.",
     icon: SquaresPlusIcon,
+    href: "/",
   },
   {
     title: "About Us",
     description: "Meet and learn about our dedication",
     icon: UserGroupIcon,
+    href: "/",
   },
   {
     title: "Blog",
     description: "Find the perfect solution for your needs.",
     icon: Bars4Icon,
+    href: "/",
   },
   {
     title: "Services",
     description: "Learn how we can help you achieve your goals.",
     icon: SunIcon,
+    href: "/",
   },
   {
     title: "Support",
     description: "Reach out to us for assistance or inquiries",
     icon: GlobeAmericasIcon,
+    href: "/",
   },
   {
     title: "Contact",
     description: "Find the perfect solution for your needs.",
     icon: PhoneIcon,
+    href: "/",
   },
   {
     title: "News",
     description: "Read insightful articles, tips, and expert opinions.",
     icon: NewspaperIcon,
+    href: "/",
   },
   {
     title: "Products",
     description: "Find the perfect solution for your needs.",
     icon: RectangleGroupIcon,
+    href: "/",
   },
   {
     title: "Special Offers",
     description: "Explore limited-time deals and bundles",
     icon: TagIcon,
+    href: "/",
   },
 ];
 
@@ -84,8 +94,8 @@ const NavListMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems: React.ReactElement[] = navListMenuItems.map(
-    ({ icon, title, description }, key) => (
-      <a href="#" key={key}>
+    ({ icon, title, description, href }, key) => (
+      <Link href={href} key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg mr-2 transition-all ease-in-out duration-100 hover:shadow-lg shadow-none hover:bg hover:bg-pink-800">
           <div className="flex items-center justify-center rounded-lg p-2 ">
             {" "}
@@ -110,7 +120,7 @@ const NavListMenu: React.FC = () => {
             </Typography>
           </div>
         </MenuItem>
-      </a>
+      </Link>
     )
   );
 
@@ -170,25 +180,15 @@ const NavListMenu: React.FC = () => {
 const NavList: React.FC = () => {
   return (
     <List className="flex-col mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:items-center lg:p-1">
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        className="font-medium hover:text-pink-600"
-      >
+      <Link href="/" className="font-medium hover:text-pink-600 text-sm">
         <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
-      </Typography>
+      </Link>
       <NavListMenu />
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        className="font-medium hover:text-pink-600"
-      >
+      <Link href="/contact" className="font-medium hover:text-pink-600 text-sm">
         <ListItem className="flex items-center gap-2 py-2 pr-4">
-          Contact Us
+          Contact
         </ListItem>
-      </Typography>
+      </Link>
     </List>
   );
 };
@@ -206,14 +206,12 @@ const NavbarWithMegaMenu: React.FC = () => {
   return (
     <Navbar className="w-full px-4 py-2 !shadow-none border-b border-zinc-800 !rounded-none">
       <div className="flex items-center justify-between mx-auto max-w-screen-xl">
-        <Typography
-          as="a"
-          href="#"
-          variant="h6"
+        <Link
+          href="/"
           className="mr-4 font-semibold cursor-pointer py-1.5 lg:ml-2 transition-all ease-in-out duration-75 hover:!text-xl hover:text-pink-600 hover:uppercase"
         >
           Proxreal
-        </Typography>
+        </Link>
         <div className="hidden lg:block">
           <NavList />
         </div>
