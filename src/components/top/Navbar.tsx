@@ -209,7 +209,7 @@ const NavbarWithMegaMenu: React.FC = () => {
   }, []);
 
   return (
-    <Navbar className="w-full px-4 py-2 !shadow-none border-b border-zinc-800 !rounded-none">
+    <Navbar className="w-full px-4 py-2 !shadow-none border-b bg-zinc-900 border-zinc-900 border-b-zinc-800  !rounded-none">
       <div className="flex items-center justify-between mx-auto max-w-screen-xl">
         <Link
           href="/"

@@ -59,7 +59,7 @@ export default function About() {
                   scale: { type: "spring", visualDuration: 0.5, bounce: 0.2 },
                 }}
                 viewport={{ once: true }}
-                className="absolute !right-20 flex flex-row -top-1/2 !h-42 !w-auto z-20"
+                className="absolute !right-20 md:flex hidden flex-row -top-1/2 !h-42 !w-auto z-20"
               >
                 <Image
                   src={"/images/about_me_1.jpg"}
@@ -78,7 +78,7 @@ export default function About() {
                   scale: { type: "spring", visualDuration: 0.5, bounce: 0.2 },
                 }}
                 viewport={{ once: true }}
-                className="absolute !right-12 flex flex-row -top-1/2 !h-42 !w-auto z-10 hover:z-30"
+                className="absolute !right-12 md:flex hidden flex-row -top-1/2 !h-42 !w-auto z-10 hover:z-30"
               >
                 <Image
                   src={"/images/about_me_2.jpg"}
@@ -150,7 +150,7 @@ export default function About() {
             </Fragment>
           }
           extra={
-            <div className="absolute right-10 -top-10 flex flex-row items-center lg:space-x-6 space-x-1">
+            <div className="absolute right-10 -top-10 md:flex flex-row items-center lg:space-x-6 space-x-1 hidden">
               <ReadSectionImageBlobs
                 href="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
                 alt="GitHub Repo"
@@ -187,6 +187,7 @@ export default function About() {
           }
         />
         <AboutReadSection
+          id="what-is-proxreal"
           title={
             <Fragment>
               What is{" "}
@@ -213,19 +214,21 @@ interface AboutReadSectionProps {
   title: ReactElement | string | ReactElement[];
   paragraph: ReactElement | string | ReactElement[];
   extra?: ReactElement | string | ReactElement[];
+  id?: string;
 }
 
 const AboutReadSection: React.FC<AboutReadSectionProps> = ({
   title,
   paragraph,
   extra,
+  id,
 }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center min-h-screen">
       <PopIn>
         <div className="bg-neutral-800 rounded-xl p-10 relative shadow-lg">
           {extra}
-          <Typography variant="h3" className="font-mono">
+          <Typography variant="h3" className="font-mono" id={id}>
             {title}
           </Typography>
           <Typography
