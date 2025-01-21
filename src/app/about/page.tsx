@@ -26,16 +26,18 @@ export default function About() {
         <AboutReadSection
           title={
             <Fragment>
-              About <span className="text-pink-600 uppercase">Me</span>
+              Some words{" "}
+              <span className="text-pink-600 uppercase">About Me</span>
             </Fragment>
           }
           paragraph={
             <Fragment>
-              My name is <strong>Philip Schrenk</strong>, and I'm from
-              Austria. Growing up, I've always been passionate about
-              programming, software engineering, and creating things in general.
-              This page is meant to be a showcase of what I can do and what I've done so far. You can find
-              me on basically all{" "}
+              My name is <strong>Philip Schrenk</strong>, and I am from the
+              Austrian city of <strong>Vienna</strong>. <br /> Growing up, I've
+              always been passionate about programming, software engineering,
+              and creating things in general. Keep reading to find out about my
+              past and ongoing projects and passions. You can find me on
+              basically all{" "}
               <DecoratedLink href={"/contact"}>
                 mayor dev platforms
               </DecoratedLink>
