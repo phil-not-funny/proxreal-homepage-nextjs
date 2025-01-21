@@ -184,6 +184,11 @@ const NavList: React.FC = () => {
         <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
       </Link>
       <NavListMenu />
+      <Link href="/about" className="font-medium hover:text-pink-600 text-sm">
+        <ListItem className="flex items-center gap-2 py-2 pr-4">
+          About
+        </ListItem>
+      </Link>
       <Link href="/contact" className="font-medium hover:text-pink-600 text-sm">
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           Contact

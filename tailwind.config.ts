@@ -13,9 +13,11 @@ export default {
         foreground: "var(--foreground)",
       },
       animation: {
-        typewriter: "typewriter 3s steps(27) forwards",
+        typewriter: "typewriter 3s steps(26) forwards",
         caret:
-          "typewriter 3s steps(27) forwards, blink 1s steps(27) infinite 3s",
+          "typewriter 3s steps(26) forwards, blink 1s steps(26) infinite 3s",
+        caret_static:
+          "blink 1s infinite"
       },
       keyframes: {
         typewriter: {
