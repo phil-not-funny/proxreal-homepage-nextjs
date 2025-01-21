@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="flex px-10 w-full text-neutral-300 flex-wrap flex-row justify-around items-center gap-y-6 gap-x-12 border-t border-zinc-800 py-6 text-center md:justify-between bg-neutral-900">
       <Typography color="white" className="font-normal">
-        &copy; 2025 Proxreal
+        &copy; 2025 Proxreal, Philip Schrenk
       </Typography>
       <ul className="flex flex-wrap justify-center items-center gap-y-2 gap-x-8">
         <li>
