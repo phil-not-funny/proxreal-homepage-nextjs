@@ -1,3 +1,5 @@
+"use client"
+
 import { motion as m, useScroll } from "framer-motion";
 import { PropsWithChildren, useEffect } from "react";
 

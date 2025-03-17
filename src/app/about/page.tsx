@@ -1,30 +1,32 @@
-"use client";
-
 import DecoratedLink from "@/components/low/DecoratedLink";
-import PageHeader from "@/components/low/PageHeader";
-import PopIn from "@/components/low/PopIn";
 import ScrollProgress from "@/components/low/ScrollProgress";
 import { PageHead } from "@/components/top/PageHead";
-import { ChevronDoubleDownIcon } from "@heroicons/react/24/solid";
-import { List, Tooltip, Typography } from "@material-tailwind/react";
 import Image from "next/image";
-import { motion as m } from "framer-motion";
-import React, { Fragment, ReactElement } from "react";
-import Link from "next/link";
+import { MotionDiv } from "@/components/Motion";
+import React, { Fragment } from "react";
+import {
+  AboutReadSection,
+  AboutReadSectionImageBlobs,
+} from "@/components/pageSpecific/AboutReadSection";
+import StyledScrollDownSection from "@/components/pageSpecific/StyledScrollDownSection";
+import { List } from "@/components/Materials";
 
 export default function About() {
   return (
     <Fragment>
       <ScrollProgress />
       <PageHead className="mt-0 justify-center">
-        <PageHeader>About</PageHeader>
-        <Typography variant="lead" className="text-center">
-          This page provides insight into who I am as an individual, while also
-          showcasing functionality and design of this website and
-          <br />
-          my entirely fictional franchise and company, "Proxreal".
-        </Typography>
-        <ChevronDoubleDownIcon className="text-neutral-300 animate-bounce h-8 w-8 rounded-full p-1 mt-10 border border-neutral-300 " />
+        <StyledScrollDownSection
+          title="About"
+          yap={
+            <Fragment>
+              This page provides insight into who I am as an individual, while
+              also showcasing functionality and design of this website and
+              <br />
+              my entirely fictional franchise and company, "Proxreal".
+            </Fragment>
+          }
+        />
       </PageHead>
       <List className="pb-12">
         <AboutReadSection
@@ -50,7 +52,7 @@ export default function About() {
           }
           extra={
             <Fragment>
-              <m.div
+              <MotionDiv
                 initial={{ opacity: 0, scale: 0.7 }}
                 whileHover={{ scale: 1.3 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -68,8 +70,8 @@ export default function About() {
                   width={100}
                   className="!w-full !h-full rounded-lg shadow-lg -rotate-[8deg]"
                 />
-              </m.div>
-              <m.div
+              </MotionDiv>
+              <MotionDiv
                 initial={{ opacity: 0, scale: 0.7 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.3 }}
@@ -87,7 +89,7 @@ export default function About() {
                   width={100}
                   className="!w-full !h-full rounded-lg !object-cover !object-center shadow-lg rotate-[8deg]"
                 />
-              </m.div>
+              </MotionDiv>
             </Fragment>
           }
         />
@@ -151,32 +153,32 @@ export default function About() {
           }
           extra={
             <div className="absolute right-10 -top-10 md:flex flex-row items-center lg:space-x-6 space-x-1 hidden">
-              <ReadSectionImageBlobs
+              <AboutReadSectionImageBlobs
                 href="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
                 alt="GitHub Repo"
                 className="right-1/3"
                 additionalHref="https://github.com/phil-not-funny/proxreal-homepage-nextjs"
               />
               <div className="realtive flex flex-row -space-x-10">
-                <ReadSectionImageBlobs
-                  href="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/nextjs-icon.png"
+                <AboutReadSectionImageBlobs
+                  href="https://www.svgrepo.com/show/354113/nextjs-icon.svg"
                   alt="NextJs"
                   className="shrink-0 grow-0"
                   additionalHref="https://nextjs.org/"
                 />
-                <ReadSectionImageBlobs
+                <AboutReadSectionImageBlobs
                   href="https://files.raycast.com/83afy69l6wjib1zd62gya59tpc76"
                   alt="TailwindCss"
                   className="shrink-0 grow-0"
                   additionalHref="https://tailwindcss.com/"
                 />
-                <ReadSectionImageBlobs
+                <AboutReadSectionImageBlobs
                   href="https://www.material-tailwind.com/image/logo-mt.png"
                   alt="Material Tailwind"
                   className="shrink-0 grow-0"
                   additionalHref="https://material-tailwind.com/"
                 />
-                <ReadSectionImageBlobs
+                <AboutReadSectionImageBlobs
                   href="https://user-images.githubusercontent.com/7850794/164965509-2a8dc49e-2ed7-4243-a2c9-481b03bbc31a.png"
                   alt="Framer-Motion"
                   className="shrink-0 grow-0"
@@ -198,7 +200,7 @@ export default function About() {
             </Fragment>
           }
           paragraph={`Proxreal is, as mentioned earlier, a completely fictional company or
-      franchise—though I'm not entirely sure what to call it. The name
+      franchise—though I'motion not entirely sure what to call it. The name
       came about a few years ago when I set out to create a series of
       quality-of-life desktop apps, adding "Prox" to each application's
       name simply because "it sounded cool." The idea stuck with me over
@@ -209,80 +211,3 @@ export default function About() {
     </Fragment>
   );
 }
-
-interface AboutReadSectionProps {
-  title: ReactElement | string | ReactElement[];
-  paragraph: ReactElement | string | ReactElement[];
-  extra?: ReactElement | string | ReactElement[];
-  id?: string;
-}
-
-const AboutReadSection: React.FC<AboutReadSectionProps> = ({
-  title,
-  paragraph,
-  extra,
-  id,
-}) => {
-  return (
-    <div className="w-full flex flex-col justify-center items-center min-h-screen">
-      <PopIn>
-        <div className="bg-neutral-800 rounded-xl p-10 relative shadow-lg">
-          {extra}
-          <Typography variant="h3" className="font-mono" id={id}>
-            {title}
-          </Typography>
-          <Typography
-            variant="paragraph"
-            className="text-pretty text-base max-w-screen-lg leading-relaxed text-neutral-300"
-          >
-            {paragraph}
-          </Typography>
-        </div>
-      </PopIn>
-    </div>
-  );
-};
-
-interface ReadSectionImageBlobsProps {
-  href: string;
-  additionalHref: string;
-  className?: string;
-  alt: string;
-}
-
-const ReadSectionImageBlobs: React.FC<ReadSectionImageBlobsProps> = ({
-  href,
-  className,
-  alt,
-  additionalHref,
-}) => {
-  return (
-    <Tooltip
-      content={alt}
-      placement="top"
-      className="bg-neutral-800 rounded-lg p-1"
-    >
-      <Link target="_blank" href={additionalHref} className="w-fit">
-        <m.div
-          initial={{ opacity: 0, scale: 0.7 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.3 }}
-          transition={{
-            duration: 1,
-            scale: { type: "spring", visualDuration: 0.5, bounce: 0.2 },
-          }}
-          viewport={{ once: true }}
-          className={`!h-20 !w-20 z-10 hover:z-20 bg-neutral-100 rounded-full cursor-pointer ${className}`}
-        >
-          <img
-            src={href}
-            alt={alt}
-            height={100}
-            width={100}
-            className="!w-full !h-full rounded-full shadow-lg"
-          />
-        </m.div>
-      </Link>
-    </Tooltip>
-  );
-};

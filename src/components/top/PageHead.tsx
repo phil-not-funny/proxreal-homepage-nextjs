@@ -1,3 +1,6 @@
+"use client";
+
+import { PropsWithClassNameAndChildren } from "@/types/ComponentTypes";
 import { motion as m } from "framer-motion";
 import { PropsWithChildren, ReactElement } from "react";
 
@@ -9,7 +12,7 @@ export const PageHead: React.FC<Props> = ({ children, className }) => {
   return (
     <m.div
       initial={{ opacity: 0, scale: 1 }}
-      animate={{ opacity: 1, scale: 1, x: "100" }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, type: "spring", stiffness: 20 }}
       className={`w-full flex flex-col items-center min-h-screen px-8  ${className}`}
     >
@@ -18,6 +21,6 @@ export const PageHead: React.FC<Props> = ({ children, className }) => {
   );
 };
 
-export const WithPageHead = (children: React.ReactElement): ReactElement => {
-  return <PageHead className="pt-24">{children}</PageHead>;
-}
+export const WithPageHead: React.FC<PropsWithClassNameAndChildren> = ({ children, className }) => {
+  return <PageHead className={`pt-24 ${className}`}>{children}</PageHead>;
+};

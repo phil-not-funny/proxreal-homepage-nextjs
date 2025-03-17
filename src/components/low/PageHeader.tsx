@@ -1,3 +1,5 @@
+"use client"
+
 import { Typography } from "@material-tailwind/react";
 import React, { ReactNode } from "react";
 

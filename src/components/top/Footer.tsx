@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
+import { Typography } from "@/components/Materials";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
