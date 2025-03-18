@@ -29,7 +29,7 @@ const EnlargableImage: React.FC<EnlargableImageProps> = ({
       <Dialog
         open={open}
         handler={handleOpen}
-        className="bg-transparent flex items-center justify-center backdrop-blur-sm w-screen"
+        className="bg-transparent flex items-center justify-center backdrop-blur-sm w-screen h-screen"
         style={{ maxWidth: "100vw", maxHeight: "100vh" }} // Ensure full viewport coverage
       >
         <DialogBody className="p-0 flex items-center justify-center">

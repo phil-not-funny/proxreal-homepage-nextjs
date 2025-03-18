@@ -200,7 +200,7 @@ export default function About() {
             </Fragment>
           }
           paragraph={`Proxreal is, as mentioned earlier, a completely fictional company or
-      franchise—though I'motion not entirely sure what to call it. The name
+      franchise—though I'm not entirely sure what to call it. The name
       came about a few years ago when I set out to create a series of
       quality-of-life desktop apps, adding "Prox" to each application's
       name simply because "it sounded cool." The idea stuck with me over

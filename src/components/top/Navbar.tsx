@@ -44,7 +44,7 @@ const navListMenuItems = [
     title: "About Us",
     description: "Meet and learn about our dedication",
     icon: UserGroupIcon,
-    href: "/",
+    href: "/about",
   },
   {
     title: "Blog",
@@ -68,7 +68,7 @@ const navListMenuItems = [
     title: "Contact",
     description: "Find the perfect solution for your needs.",
     icon: PhoneIcon,
-    href: "/",
+    href: "/contact",
   },
   {
     title: "News",
